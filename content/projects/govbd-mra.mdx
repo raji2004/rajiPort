@@ -1,0 +1,1757 @@
+---
+title: GovBD-MRA (Market Research Analytics)
+description: GovBD-MRA is an enterprise-grade federal contract intelligence platform that combines Java Spring Boot microservices, Python FastAPI, and Next.js 15 to deliver AI-powered government procurement analytics, entity tracking, and award monitoring for government contractors.
+date: "2024-01-01"
+url: none
+published: true
+repository: kontratar/govbd-mra
+---
+
+[![GovBD-MRA](https://via.placeholder.com/1200x600/2563eb/ffffff?text=GovBD-MRA+%7C+Market+Research+Analytics)](https://mra.govbd.com)
+
+# GovBD-MRA: Federal Contract Intelligence Platform 🏛️
+
+GovBD-MRA (Market Research Analytics) is a sophisticated enterprise platform designed to revolutionize how government contractors discover, analyze, and track federal procurement opportunities. Built as part of the Kontratar ecosystem, MRA combines real-time data ingestion, AI-powered analytics, and intelligent search to provide contractors with actionable insights into government spending patterns, entity relationships, and award trends.
+
+> "Transforming government procurement data into strategic business intelligence."
+
+---
+
+## 🎯 The Challenge We Solve
+
+Government contractors face significant challenges in the federal marketplace:
+
+- 📊 **Data Overload**: 2M+ entities, 100K+ awards annually across multiple sources (SAM.gov, USAspending.gov, FPDS)
+- 🔍 **Complex Search**: Multi-dimensional queries across entities, awards, agencies, NAICS codes, PSC codes
+- 📈 **Analytics Gap**: Difficulty identifying spending trends, agency patterns, and competitive landscapes
+- 🤖 **Manual Research**: Time-consuming manual research and opportunity tracking
+- 🔗 **Fragmented Data**: Entity data, award data, and historical relationships scattered across systems
+- ⏰ **Time Sensitivity**: Missing critical opportunities due to delayed notifications
+- 💼 **Team Collaboration**: Coordinating research across multiple team members and projects
+
+**GovBD-MRA solves all of these** by providing an integrated, AI-powered platform that automates data aggregation, analysis, and insight generation.
+
+---
+
+## ✨ Key Features
+
+### 🏢 SAM Entity Management
+
+**Comprehensive Entity Database**
+- **2M+ Registered Entities**: Complete SAM.gov entity registry
+- **Real-time Synchronization**: Daily updates from SAM.gov API
+- **Historical Downloads**: Automated historical data ingestion
+- **Staging Pipeline**: Multi-stage validation and deduplication
+- **Vector Embeddings**: AI-powered semantic search using E5-Large-v2
+
+**Entity Data Points**
+- Core registration information (UEI, CAGE code, DUNS)
+- Business types and classifications
+- NAICS codes (primary and secondary)
+- PSC codes (Product/Service Codes)
+- Points of contact (POC) with full contact details
+- Physical and mailing addresses
+- Certifications (8(a), HUBZone, WOSB, SDVOSB, etc.)
+- Financial information and banking details
+- Geographical service areas
+
+**Advanced Entity Search**
+- Full-text search across all entity fields
+- Filter by business type, NAICS, PSC, location
+- Certification filtering (small business, veteran-owned, etc.)
+- Relationship mapping (parent companies, subsidiaries)
+- Export to CSV for bulk analysis
+- Async extract for large datasets
+
+### 💰 Award Intelligence System
+
+**USAspending.gov Integration**
+- **100K+ Awards Annually**: Complete federal contract awards
+- **Real-time ETL Pipeline**: Automated daily data extraction
+- **Award Staging**: Validation and enrichment pipeline
+- **Vector Database**: Qdrant integration for semantic search
+- **Historical Tracking**: Multi-year award history
+
+**Award Data Coverage**
+- Prime contract awards (all federal agencies)
+- Award amounts, dates, and durations
+- Contracting agency and office
+- Recipient information (entity linkage)
+- NAICS and PSC codes
+- Place of performance
+- Contract type and pricing
+- Competition type
+- Set-aside categories
+
+**Award Analytics**
+- Spending trends by agency, time period
+- Top recipients and contractors
+- NAICS/PSC spending distribution
+- Geographic spending patterns
+- Small business utilization
+- Award size distribution
+- Competition analysis
+
+### 📊 Advanced Analytics & Drilldown
+
+**Automated Analytics Jobs**
+- **Daily Drilldown**: Comprehensive agency spending analysis
+- **Weekly Rollups**: Historical trend aggregation
+- **Scheduled Processing**: APScheduler-based automation
+- **Incremental Updates**: Efficient delta processing
+
+**Analytics Dimensions**
+- **By Agency**: Agency-level spending patterns
+- **By NAICS**: Industry sector analysis
+- **By PSC**: Product/Service category trends
+- **By Entity**: Contractor performance tracking
+- **By Time**: Temporal trend analysis
+- **By Geography**: Regional spending patterns
+
+**Drilldown Capabilities**
+- Top 10 recipients per category
+- Spending distribution charts
+- Year-over-year comparisons
+- Award count vs. amount analysis
+- Competition metrics
+- Set-aside utilization
+
+### 🤖 AI-Powered Chat & Research
+
+**Intelligent Conversational Interface**
+- **LangChain Integration**: Multi-LLM support (Ollama, OpenAI, Gemini)
+- **Streaming Responses**: Server-Sent Events (SSE) for real-time chat
+- **Context-Aware**: RAG (Retrieval-Augmented Generation) using vector search
+- **Memory Management**: Automatic conversation history and summarization
+- **Multi-Thread**: Concurrent conversation threads per user
+
+**Research Automation**
+- **Scheduled Research**: Automated research prompt execution
+- **Entity Research**: Deep-dive entity analysis with AI
+- **Award Research**: Contract opportunity research
+- **Market Analysis**: Competitive landscape assessment
+- **Trend Identification**: AI-powered trend detection
+
+**Chat Features**
+- Natural language queries across entities and awards
+- File upload support (PDF, DOCX, XLSX)
+- Document Q&A with RAG
+- Export chat history
+- Share research threads
+- Team collaboration on research
+
+### 🔍 Multi-Source Search Engine
+
+**Unified Search Interface**
+- **Elasticsearch Integration**: Fast full-text search across 2M+ records
+- **Vector Search**: Semantic similarity using Qdrant
+- **Hybrid Search**: Combined keyword + semantic ranking
+- **Fuzzy Matching**: Typo-tolerant searches
+- **Faceted Filtering**: Multi-dimensional filtering
+
+**Search Capabilities**
+- Entity search (name, UEI, CAGE, DUNS)
+- Award search (title, description, agency)
+- NAICS code search
+- PSC code search
+- Geographic search (state, city, zip)
+- Combined entity + award searches
+- Advanced boolean queries
+
+### 📁 Project & Document Management
+
+**Research Projects**
+- Create and organize research projects
+- Associate entities and awards
+- Tag and categorize opportunities
+- Track project status
+- Team collaboration
+- Share project insights
+
+**Document Processing**
+- Upload RFPs, RFQs, solicitations
+- AI-powered document parsing
+- Extract key information
+- Q&A on uploaded documents
+- Document versioning
+- Attachment management
+
+### 👥 Team Collaboration & Access Control
+
+**Multi-Tenant Architecture**
+- Tenant isolation (data segregation)
+- Role-based access control (RBAC)
+- Team management
+- Invitation system
+- Permission management
+
+**Team Features**
+- Create and manage teams
+- Invite team members
+- Assign roles (admin, member, viewer)
+- Share research and projects
+- Collaborative chat threads
+- Activity tracking
+
+### 💳 Subscription & Billing
+
+**Stripe Integration**
+- Multiple pricing tiers
+- Monthly and annual billing
+- Usage-based limits
+- Automatic renewals
+- Payment method management
+- Invoice generation
+
+**Subscription Plans**
+- **Free Tier**: Limited searches and entities
+- **Professional**: Enhanced search, analytics
+- **Enterprise**: Unlimited access, team features
+- **Custom**: Tailored solutions for large organizations
+
+### 🔔 Expiring Opportunities & Alerts
+
+**Opportunity Tracking**
+- Track expiring solicitations
+- Custom alert thresholds
+- Email notifications
+- Dashboard widgets
+- Favorite opportunities
+- Calendar integration
+
+### ⭐ Favorites & Watchlists
+
+**Personal Tracking**
+- Favorite entities
+- Favorite awards
+- Save searches
+- Track competitors
+- Monitor agencies
+- Export watchlists
+
+---
+
+## 🏗️ Technical Architecture
+
+GovBD-MRA is built using a modern microservices architecture with three primary services and multiple supporting components.
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Client Layer                              │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │         Next.js 15 Frontend (React 19)                │  │
+│  │  - Server Components (RSC)                           │  │
+│  │  - App Router                                         │  │
+│  │  - TanStack Query (React Query)                      │  │
+│  │  - Zustand State Management                          │  │
+│  │  - shadcn/ui + Radix UI + Tailwind CSS              │  │
+│  └──────────────────────────────────────────────────────┘  │
+└───────────────────────┬─────────────────────────────────────┘
+                        │ HTTP/SSE
+┌───────────────────────▼─────────────────────────────────────┐
+│              Application Layer (Backend Services)            │
+│  ┌────────────────┬────────────────┬───────────────────┐   │
+│  │  EntityData    │  AwardLoad     │  MRA Backend      │   │
+│  │  Service       │  Service       │  (FastAPI)        │   │
+│  │  (Spring Boot) │  (Spring Boot) │                   │   │
+│  ├────────────────┼────────────────┼───────────────────┤   │
+│  │ Java 17        │ Java 17        │ Python 3.11+      │   │
+│  │ Spring Boot    │ Spring Boot    │ FastAPI 0.115     │   │
+│  │ 3.2.0          │ 3.2.0          │ SQLAlchemy 2.0    │   │
+│  │ Hibernate/JPA  │ Hibernate/JPA  │ LangChain 0.3     │   │
+│  │ PostgreSQL     │ PostgreSQL     │ Uvicorn           │   │
+│  │ Vector DB      │ Vector DB      │ AsyncIO           │   │
+│  │ Integration    │ Integration    │                   │   │
+│  └────────────────┴────────────────┴───────────────────┘   │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+┌───────────────────────▼─────────────────────────────────────┐
+│                    Data Layer                                │
+│  ┌────────────┬──────────────┬───────────┬──────────────┐  │
+│  │ PostgreSQL │ Elasticsearch│  Qdrant   │  ChromaDB    │  │
+│  │ (Primary)  │ (Search)     │ (Vector)  │  (Fallback)  │  │
+│  ├────────────┼──────────────┼───────────┼──────────────┤  │
+│  │ Entities   │ Full-text    │ E5-Large  │ Embeddings   │  │
+│  │ Awards     │ search       │ v2        │              │  │
+│  │ Users      │ Faceted      │ Semantic  │ Documents    │  │
+│  │ Projects   │ filters      │ search    │              │  │
+│  │ Analytics  │ Aggregations │ RAG       │              │  │
+│  └────────────┴──────────────┴───────────┴──────────────┘  │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+┌───────────────────────▼─────────────────────────────────────┐
+│                 External Data Sources                        │
+│  ┌──────────────┬────────────────┬────────────────────┐    │
+│  │   SAM.gov    │ USAspending.gov│      FPDS          │    │
+│  │   Entity API │    Award API   │   Contract API     │    │
+│  └──────────────┴────────────────┴────────────────────┘    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Service Breakdown
+
+#### 1. **EntityData Service** (Java/Spring Boot)
+
+**Purpose**: Manages SAM.gov entity data ingestion, processing, and storage
+
+**Technology Stack**:
+- Java 17
+- Spring Boot 3.2.0
+- Spring Data JPA / Hibernate
+- PostgreSQL (relational storage)
+- Qdrant/ChromaDB (vector storage)
+- Spring WebFlux (reactive HTTP client)
+- SpringDoc OpenAPI (Swagger)
+- Spring Security (Swagger protection)
+
+**Core Components**:
+
+```java
+// Controllers
+EntityController               // Entity CRUD operations
+EntityStagingController         // Staging pipeline management
+HistoricalDownloadController    // Historical data downloads
+JobManagementController         // Background job control
+CleanupController              // Data cleanup operations
+
+// Services
+EnhancedSamApiClient           // SAM.gov API integration
+SamApiKeyManager               // API key rotation (10 keys)
+EntityStorageService           // Entity persistence
+EntitySearchService            // Search functionality
+EmbeddingService               // Vector embedding generation
+OptimizedEntityProcessingService // Batch processing
+HistoricalEntityDownloadService // Historical downloads
+ComprehensiveEntityService     // Full entity management
+EntityDataWorkflowOrchestrator // Workflow coordination
+
+// Repositories
+SamEntityComprehensiveRepository // Main entity repository
+EntityStagingRepository         // Staging table access
+OptimizedEntityRepository       // Performance-optimized queries
+
+// Models
+SamEntityComprehensive         // Complete entity model
+EntityStagingEntity            // Staging table model
+SamEntityBusinessType          // Business type associations
+SamEntityNaics                 // NAICS code associations
+SamEntityPsc                   // PSC code associations
+SamEntityPoc                   // Points of contact
+SamEntityGeographicalArea      // Service areas
+```
+
+**Data Pipeline**:
+```
+SAM.gov API
+    ↓
+API Key Queue (10 rotating keys)
+    ↓
+JSON Staging Table
+    ↓
+Validation & Transformation
+    ↓
+Comprehensive Entity Storage (PostgreSQL)
+    ↓
+Vector Embedding Generation (E5-Large-v2)
+    ↓
+Vector Database (Qdrant/ChromaDB)
+```
+
+**Key Features**:
+- **API Key Management**: 10 SAM.gov API keys with automatic rotation
+- **Staging Pipeline**: JSON storage → validation → transformation
+- **Bulk Operations**: Process 10,000+ entities per batch
+- **Vector Embeddings**: Generate embeddings for semantic search
+- **Historical Downloads**: Automated monthly historical data ingestion
+- **Scheduled Cleanup**: Remove stale staging data
+- **Performance Monitoring**: Track API calls, processing times
+- **Resilience**: Retry logic, circuit breakers, rate limiting
+
+#### 2. **AwardLoad Service** (Java/Spring Boot)
+
+**Purpose**: Manages USAspending.gov award data ingestion and processing
+
+**Technology Stack**:
+- Java 17
+- Spring Boot 3.2.0
+- Spring Data JPA / Hibernate
+- PostgreSQL (relational storage)
+- Qdrant/ChromaDB (vector storage)
+- Spring Actuator (health checks)
+- Maven build system
+
+**Core Components**:
+
+```java
+// Award Models
+AwardProd                      // Primary award table
+AwardStaging                   // Staging table for new awards
+AwardIija                      // IIJA-specific awards
+
+// Award Processing
+AwardLoadService              // Main ETL service
+AwardStagingService           // Staging pipeline
+AwardTransformationService    // Data transformation
+VectorEmbeddingService        // Award embeddings
+
+// External API Integration
+UsaSpendingApiClient          // USAspending.gov integration
+AwardBatchProcessor           // Batch processing
+```
+
+**Data Pipeline**:
+```
+USAspending.gov API
+    ↓
+Award Staging Table
+    ↓
+Column Mapping & Validation
+    ↓
+Award Production Table (PostgreSQL)
+    ↓
+Vector Embedding Generation
+    ↓
+Vector Database (Qdrant)
+```
+
+**Key Features**:
+- **Column Mapping**: Automated mapping from USAspending schema to internal schema
+- **IIJA Support**: Special handling for Infrastructure Investment and Jobs Act awards
+- **Staging Pipeline**: Validate before production insertion
+- **Vector Search**: Generate embeddings for award descriptions
+- **Scheduled ETL**: Daily award data updates
+- **Data Quality**: Validation rules and error handling
+
+#### 3. **MRA Backend** (Python/FastAPI)
+
+**Purpose**: Provides REST API, AI chat, analytics, and business logic
+
+**Technology Stack**:
+- Python 3.11+
+- FastAPI 0.115
+- SQLAlchemy 2.0 (async ORM)
+- AsyncPG (PostgreSQL driver)
+- Uvicorn (ASGI server)
+- Uvloop (high-performance event loop)
+- HTTPTools (fast HTTP parsing)
+- LangChain 0.3 (LLM framework)
+- Ollama / OpenAI / Gemini (LLM providers)
+- Qdrant Client 1.12 (vector DB)
+- Elasticsearch 8.15 (search)
+- APScheduler 3.10 (task scheduling)
+- PyJWT 2.8 (authentication)
+- Loguru 0.7 (logging)
+
+**Core Routers** (API Endpoints):
+
+```python
+/auth              # Authentication (register, login, refresh token)
+/chats             # AI chat threads and messages (SSE streaming)
+/projects          # Research project management
+/llm               # LLM model configuration and management
+/files             # File upload and document processing
+/documents         # Document Q&A and retrieval
+/subscriptions     # Stripe payment and billing
+/teams             # Team management and invitations
+/expiring-opportunities # Expiring solicitation alerts
+/research          # Research automation and prompts
+/favourites        # User favorites (entities, awards)
+/analytics         # Analytics dashboard data
+/analytics_drilldown # Detailed analytics queries
+/public_award      # Public award data (no auth)
+/fpds              # FPDS contract data integration
+```
+
+**Core Services**:
+
+```python
+# Authentication
+auth_middleware.py             # JWT verification middleware
+hashing.py                     # Password hashing (bcrypt)
+
+# Chat & AI
+enhanced_chat_service.py       # Main chat service (LangChain)
+thread_service.py              # Chat thread management
+memory_service.py              # Conversation memory
+title_generation_service.py    # Auto-generate chat titles
+web_search_service.py          # Gemini web search integration
+
+# LLM Management
+llm_factory.py                 # Multi-provider LLM factory
+llm_management_service.py      # LLM lifecycle management
+
+# Intelligence Layer
+intelligent_query_router.py    # Route queries to appropriate handlers
+query_intent_service.py        # Classify query intent
+context_aware_response_service.py # Generate contextual responses
+
+# Database Services
+award_database_service.py      # Award data access
+agency_database_service.py     # Agency data access
+sql_query_service.py           # Dynamic SQL generation
+llm_powered_search_service.py  # LLM-enhanced search
+
+# Vector Databases
+qdrant_service.py              # Qdrant integration
+chroma_service.py              # ChromaDB integration
+vector_database_factory.py     # Vector DB abstraction
+
+# Document Processing
+document_service.py            # Document storage
+document_processing_service.py # PDF/DOCX/XLSX parsing
+gemini_files_service.py        # Google Gemini file uploads
+
+# Analytics
+scheduler.py                   # Analytics job scheduler
+drilldown_job.py               # Drilldown analytics execution
+reader.py                      # Analytics data reader
+sql.py                         # Analytics SQL queries
+
+# Team Management
+team_service.py                # Team CRUD operations
+team_access.py                 # Access control
+
+# Project Management
+project_service.py             # Research project management
+
+# FPDS Integration
+fetch_fpds.py                  # FPDS data fetching
+fpds_database_service.py       # FPDS data storage
+
+# Subscription & Billing
+liscence.py                    # Subscription tier management (Stripe)
+
+# Utilities
+embedding_model.py             # E5-Large-v2 embedding generation
+markdown_formatter.py          # Markdown response formatting
+response.py                    # Standardized API responses
+```
+
+**Scheduled Jobs**:
+```python
+# Research Scheduler (runs daily at midnight UTC)
+- Process scheduled research prompts
+- Execute AI-powered entity/award research
+- Store research results
+
+# Analytics Scheduler
+- Daily Drilldown: Comprehensive agency analytics (2 AM UTC)
+- Weekly Rollup: Historical trend aggregation (Sunday 3 AM UTC)
+- Incremental updates for efficiency
+```
+
+**API Performance Optimizations**:
+- **Async/Await**: Fully asynchronous request handling
+- **Connection Pooling**: Database connection reuse
+- **Compression Middleware**: Gzip compression for responses >1KB
+- **Request Timing**: Performance monitoring middleware
+- **Concurrency Limiting**: 1000 concurrent connections max
+- **Worker Pool**: 4 workers in production
+- **Keep-Alive**: 120s timeout for persistent connections
+- **Graceful Shutdown**: 60s graceful shutdown window
+
+#### 4. **MRA Frontend** (Next.js 15 / React 19)
+
+**Technology Stack**:
+- Next.js 15.5.2 (App Router)
+- React 19.1.0
+- TypeScript 5
+- Tailwind CSS 4
+- shadcn/ui components
+- Radix UI primitives
+- TanStack Query 5.87 (data fetching)
+- Zustand (state management)
+- Framer Motion 12 (animations)
+- NextAuth.js 5.0 (authentication)
+- Vercel AI SDK (AI chat)
+- Recharts 2.15 (analytics charts)
+- Axios 1.11 (HTTP client)
+- Stripe React (payments)
+- XLSX (Excel export)
+
+**Application Structure**:
+
+```
+src/app/
+├── (auth)/                    # Authentication pages
+│   ├── login/                 # Login with token support
+│   ├── register/              # User registration
+│   ├── reset-password/        # Password reset
+│   └── verify-email/          # Email verification
+│
+├── (landingPage)/             # Marketing pages
+│   ├── pricing/               # Pricing tiers
+│   └── checkout/              # Stripe checkout flow
+│
+├── (main)/                    # Authenticated app
+│   ├── analytics/             # Analytics dashboard
+│   ├── award/                 # Award search & details
+│   │   ├── [id]/              # Award detail page
+│   │   └── favourite/         # Favorite awards
+│   ├── entities/              # Entity search & details
+│   │   └── [id]/              # Entity detail page
+│   ├── research/              # Research automation
+│   │   └── [promptId]/        # Research results
+│   ├── projects/              # Project management
+│   │   ├── new/               # Create project
+│   │   └── [id]/              # Project details
+│   ├── c/                     # Chat interface
+│   │   ├── new/               # New chat
+│   │   └── [id]/              # Chat thread
+│   ├── teams/                 # Team management
+│   └── accounts/              # Account settings
+│
+├── public/                    # Public pages (no auth)
+│   └── award/[id]/            # Public award view
+│
+├── s/[id]/                    # Shared research links
+│
+├── layout.tsx                 # Root layout
+├── page.tsx                   # Landing page
+└── provider.tsx               # React Query provider
+```
+
+**Key Components**:
+
+```typescript
+// Core UI Components (shadcn/ui based)
+Button, Input, Select, Dialog, Dropdown, Tabs, Accordion
+Card, Table, DataTable (TanStack Table), Command (cmdk)
+Calendar, DatePicker, Checkbox, Switch, Tooltip
+Avatar, Badge, Separator, ScrollArea
+
+// Custom Components
+ChatInterface                  // AI chat with SSE
+AnalyticsDashboard            // Recharts visualizations
+EntityCard                    // Entity display card
+AwardCard                     // Award display card
+SearchFilters                 // Multi-facet search filters
+ProjectCard                   // Project display
+TeamInviteDialog              // Team invitation modal
+SubscriptionCard              // Pricing tier card
+DocumentUploader              // File upload component
+```
+
+**State Management**:
+
+```typescript
+// Zustand Stores
+useAuthStore                   // User authentication state
+useChatStore                   // Chat messages and threads
+useFilterStore                 // Search filter state
+useProjectStore                // Project state
+useTeamStore                   // Team state
+
+// TanStack Query Keys
+['entities', filters]          // Entity search cache
+['entity', id]                 // Single entity cache
+['awards', filters]            // Award search cache
+['award', id]                  // Single award cache
+['analytics', params]          // Analytics data cache
+['projects']                   // User projects cache
+['teams']                      // User teams cache
+['chat', threadId]             // Chat thread cache
+```
+
+**Features**:
+- **Server-Side Rendering (SSR)**: Fast initial page loads
+- **React Server Components (RSC)**: Reduced client bundle size
+- **Streaming SSR**: Progressive page rendering
+- **Optimistic Updates**: Instant UI feedback
+- **Infinite Scroll**: Pagination for large result sets
+- **Real-time Chat**: SSE streaming from backend
+- **Dark Mode**: Next-themes integration
+- **Responsive Design**: Mobile-first approach
+- **Accessibility**: ARIA labels, keyboard navigation
+
+---
+
+## 🛠️ Technology Stack Summary
+
+### Backend Technologies
+
+**Java Services (EntityData, AwardLoad)**:
+- **Java 17**: Modern Java with records, pattern matching
+- **Spring Boot 3.2.0**: Enterprise framework
+- **Spring Data JPA**: ORM abstraction
+- **Hibernate**: JPA implementation
+- **PostgreSQL Driver**: JDBC connectivity
+- **Spring WebFlux**: Reactive HTTP client
+- **Jackson**: JSON serialization
+- **Lombok**: Boilerplate reduction
+- **SpringDoc OpenAPI**: Swagger documentation
+- **Spring Security**: API protection
+- **Logback**: Logging framework
+- **Maven**: Build and dependency management
+
+**Python Service (MRA Backend)**:
+- **Python 3.11+**: Modern Python with type hints
+- **FastAPI 0.115**: High-performance web framework
+- **SQLAlchemy 2.0**: Async ORM
+- **AsyncPG**: PostgreSQL async driver
+- **Uvicorn**: ASGI server
+- **Pydantic 2.11**: Data validation
+- **LangChain 0.3**: LLM orchestration
+- **LangGraph 0.2**: Agentic workflows
+- **Ollama 0.5**: Local LLM integration
+- **OpenAI 1.93**: OpenAI API client
+- **Google GenAI 1.30**: Gemini API client
+- **Qdrant Client 1.12**: Vector database client
+- **Elasticsearch 8.15**: Search engine client
+- **APScheduler 3.10**: Task scheduling
+- **PyJWT 2.8**: JWT authentication
+- **Bcrypt 4.2**: Password hashing
+- **Loguru 0.7**: Structured logging
+- **HTTPX 0.28**: Async HTTP client
+- **PyPDF2**: PDF parsing
+- **python-docx**: DOCX parsing
+- **openpyxl**: Excel parsing
+
+### Frontend Technologies
+
+- **Next.js 15.5.2**: React framework
+- **React 19.1.0**: UI library
+- **TypeScript 5**: Type safety
+- **Tailwind CSS 4**: Utility-first CSS
+- **shadcn/ui**: Component library
+- **Radix UI**: Headless UI primitives
+- **TanStack Query 5.87**: Data synchronization
+- **TanStack Table 8.21**: Data tables
+- **Zustand**: State management
+- **Framer Motion 12**: Animations
+- **NextAuth.js 5.0**: Authentication
+- **Vercel AI SDK 5.0**: AI chat streaming
+- **Recharts 2.15**: Data visualization
+- **Axios 1.11**: HTTP client
+- **Stripe React 3.0**: Payment UI
+- **React Syntax Highlighter**: Code highlighting
+- **date-fns 4.1**: Date utilities
+- **Zod 4.1**: Schema validation
+- **XLSX 0.18**: Excel export
+- **Lucide React**: Icon library
+
+### Data Layer
+
+**PostgreSQL**:
+- **Version**: 14+
+- **Extensions**: pg_trgm (fuzzy search), pgvector (embeddings)
+- **Schemas**: Multiple schemas for entities, awards, users, analytics
+- **Connection Pooling**: HikariCP (Java), AsyncPG (Python)
+
+**Elasticsearch**:
+- **Version**: 8.15
+- **Indices**: Entities, awards with custom analyzers
+- **Features**: Full-text search, aggregations, facets
+
+**Qdrant**:
+- **Version**: 1.12
+- **Collections**: Entity embeddings, award embeddings, document chunks
+- **Model**: E5-Large-v2 (768 dimensions)
+- **Distance**: Cosine similarity
+
+**ChromaDB** (Fallback):
+- **Version**: Latest
+- **Usage**: Document embeddings for RAG
+- **Collections**: Chat documents, uploaded files
+
+### DevOps & Infrastructure
+
+**Containerization**:
+- **Docker**: Multi-stage builds for each service
+- **Docker Compose**: Local development orchestration
+- **Dockerfiles**:
+  - `Dockerfile.EntityData` (Java 17, Maven build)
+  - `Dockerfile.AwardLoad` (Java 17, Maven build)
+  - `Dockerfile.Backend` (Python 3.11, pip install)
+  - `Dockerfile.Frontend` (Node 20, Bun build)
+
+**Deployment**:
+- **Environment**: dev, qa, production
+- **Health Checks**: /actuator/health (Java), /health (Python)
+- **Logging**: File-based logging with rotation
+- **Volumes**: Shared logs, property files, SSL certificates
+- **Restart Policy**: unless-stopped
+- **Networks**: Custom Docker network per environment
+
+**Scripts**:
+```bash
+scripts/
+├── build.sh              # Build all Docker images
+├── deploy.sh             # Deploy services
+├── start.sh              # Start services
+├── stop.sh               # Stop services
+├── status.sh             # Check service status
+└── swagger-password-generator.sh  # Generate Swagger passwords
+```
+
+---
+
+## 📊 Data Flow & Integration
+
+### Entity Data Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    SAM.gov Entity API                        │
+│  https://api.sam.gov/entity-information/v3/entities          │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      │ HTTPS GET (10 API keys rotation)
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│              EntityData Service (Spring Boot)                │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  EnhancedSamApiClient                                 │  │
+│  │  - API key queue management                           │  │
+│  │  - Rate limiting (10 req/sec per key)                │  │
+│  │  - Retry logic with exponential backoff              │  │
+│  │  - Response validation                               │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  EntityStagingService                                 │  │
+│  │  - Store raw JSON in staging table                   │  │
+│  │  - Validation (required fields, format)              │  │
+│  │  - Deduplication (by UEI)                            │  │
+│  │  - Audit trail (created_at, processed_at)            │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  OptimizedEntityProcessingService                     │  │
+│  │  - Batch processing (10,000 entities/batch)          │  │
+│  │  - Transform JSON → JPA entities                     │  │
+│  │  - Extract relationships (NAICS, PSC, POC, etc.)     │  │
+│  │  - Insert/Update sam_entity_comprehensive           │  │
+│  │  - Insert related tables (NAICS, PSC, POC, etc.)    │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  OptimizedEmbeddingService                            │  │
+│  │  - Generate embeddings (E5-Large-v2)                 │  │
+│  │  - Concatenate searchable fields                     │  │
+│  │  - Batch embedding generation (100/batch)            │  │
+│  │  - Store embeddings in vector DB                     │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+└────────────────────────┼───────────────────────────────────┘
+                         │
+         ┌───────────────┴───────────────┐
+         │                               │
+         ▼                               ▼
+┌────────────────────┐         ┌──────────────────┐
+│   PostgreSQL       │         │  Qdrant/ChromaDB │
+│  (Relational DB)   │         │  (Vector DB)     │
+├────────────────────┤         ├──────────────────┤
+│ sam_entity_comp... │         │ entity_vectors   │
+│ sam_entity_naics   │         │ - 768 dimensions │
+│ sam_entity_psc     │         │ - Cosine metric  │
+│ sam_entity_poc     │         │ - HNSW index     │
+│ ...                │         └──────────────────┘
+└────────────────────┘
+```
+
+### Award Data Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                USAspending.gov Award API                     │
+│  https://api.usaspending.gov/api/v2/awards/                 │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      │ HTTPS GET (daily scheduled)
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│              AwardLoad Service (Spring Boot)                 │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  UsaSpendingApiClient                                 │  │
+│  │  - Fetch prime contracts                             │  │
+│  │  - Filter by date range (incremental)                │  │
+│  │  - Parse award JSON                                  │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  AwardStagingService                                  │  │
+│  │  - Store in award_staging table                      │  │
+│  │  - Column mapping (USAspending → internal schema)    │  │
+│  │  - Validation (required fields)                      │  │
+│  │  - IIJA flag detection                               │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  AwardTransformationService                           │  │
+│  │  - Move staging → production (award_prod)            │  │
+│  │  - Generate embeddings for descriptions              │  │
+│  │  - Link to entities (by UEI/CAGE/DUNS)              │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+└────────────────────────┼───────────────────────────────────┘
+                         │
+         ┌───────────────┴───────────────┐
+         │                               │
+         ▼                               ▼
+┌────────────────────┐         ┌──────────────────┐
+│   PostgreSQL       │         │  Qdrant          │
+│  (Relational DB)   │         │  (Vector DB)     │
+├────────────────────┤         ├──────────────────┤
+│ award_prod         │         │ award_vectors    │
+│ award_staging      │         │ - 768 dimensions │
+│ award_iija         │         │ - Cosine metric  │
+│ ...                │         └──────────────────┘
+└────────────────────┘
+```
+
+### AI Chat Flow (RAG Pipeline)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    User Query (Frontend)                     │
+│  "What are recent cybersecurity contracts with DoD?"        │
+└─────────────────────┬───────────────────────────────────────┘
+                      │ HTTP POST /chats/ask
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│              MRA Backend (FastAPI)                           │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  intelligent_query_router.py                          │  │
+│  │  - Classify intent (entity search, award search, etc.)│  │
+│  │  - Route to appropriate handler                       │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  query_intent_service.py                              │  │
+│  │  - LLM-based intent classification                    │  │
+│  │  - Extract entities: ["DoD", "cybersecurity"]         │  │
+│  │  - Determine search type: "award_search"              │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  llm_powered_search_service.py                        │  │
+│  │  - Generate embedding for query                       │  │
+│  │  - Vector search in Qdrant                            │  │
+│  │  - Retrieve top-k similar awards (k=10)               │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+│                        │                                     │
+│  ┌─────────────────────▼─────────────────────────────────┐  │
+│  │  enhanced_chat_service.py (LangChain)                 │  │
+│  │  ┌─────────────────────────────────────────────────┐  │  │
+│  │  │  RAG Chain                                       │  │  │
+│  │  │  1. Load conversation memory                    │  │  │
+│  │  │  2. Retrieve relevant context from Qdrant       │  │  │
+│  │  │  3. Format prompt with context + query          │  │  │
+│  │  │  4. Stream LLM response (Ollama/OpenAI/Gemini)  │  │  │
+│  │  │  5. Save message to database                    │  │  │
+│  │  │  6. Update conversation memory                  │  │  │
+│  │  └─────────────────────────────────────────────────┘  │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+└────────────────────────┼───────────────────────────────────┘
+                         │
+                         │ SSE Stream
+                         │
+┌────────────────────────▼───────────────────────────────────┐
+│                    Frontend (Next.js)                        │
+│  - Display streaming response token by token                 │
+│  - Store message in local state                              │
+│  - Update chat UI                                            │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Analytics Drilldown Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│              APScheduler (MRA Backend)                       │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  Daily Trigger (2 AM UTC)                             │  │
+│  │  Weekly Trigger (Sunday 3 AM UTC)                     │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+└────────────────────────┼───────────────────────────────────┘
+                         │
+┌────────────────────────▼───────────────────────────────────┐
+│              drilldown_job.py                                │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  1. Query PostgreSQL for recent awards               │  │
+│  │  2. Group by: agency, NAICS, PSC, entity, date       │  │
+│  │  3. Calculate aggregations:                          │  │
+│  │     - Total award amount                             │  │
+│  │     - Award count                                    │  │
+│  │     - Top 10 recipients                              │  │
+│  │     - Competition metrics                            │  │
+│  │     - Set-aside utilization                          │  │
+│  │  4. Store results in analytics tables                │  │
+│  └─────────────────────┬─────────────────────────────────┘  │
+└────────────────────────┼───────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────────┐
+│              PostgreSQL Analytics Tables                     │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │  analytics_agency_daily                               │  │
+│  │  analytics_naics_daily                                │  │
+│  │  analytics_psc_daily                                  │  │
+│  │  analytics_entity_daily                               │  │
+│  │  analytics_trends_weekly                              │  │
+│  └───────────────────────────────────────────────────────┘  │
+└────────────────────────┬───────────────────────────────────┘
+                         │
+                         │ API Request
+                         │
+┌────────────────────────▼───────────────────────────────────┐
+│         analytics_router.py (MRA Backend)                    │
+│  GET /analytics/agency?start_date=...&end_date=...          │
+│  - Fetch pre-computed analytics                             │
+│  - Apply filters (date range, agency, etc.)                 │
+│  - Return JSON                                              │
+└────────────────────────┬───────────────────────────────────┘
+                         │
+                         │ JSON Response
+                         │
+┌────────────────────────▼───────────────────────────────────┐
+│            Frontend Analytics Dashboard                      │
+│  - Recharts bar charts, line charts, pie charts             │
+│  - Interactive filters                                       │
+│  - Drill-down navigation                                    │
+│  - Export to Excel                                          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Java 17**: For EntityData and AwardLoad services
+- **Maven 3.8+**: Java build tool
+- **Python 3.11+**: For MRA Backend
+- **Node.js 20+**: For MRA Frontend (Bun recommended)
+- **Docker & Docker Compose**: For containerized deployment
+- **PostgreSQL 14+**: Database (or Docker container)
+- **Elasticsearch 8.15**: Search engine (optional, for advanced search)
+- **Qdrant**: Vector database (or ChromaDB as fallback)
+
+### Local Development Setup
+
+#### 1. Clone Repository
+
+```bash
+git clone https://github.com/kontratar/govbd-mra.git
+cd GovBD-MRA
+```
+
+#### 2. Configure Environment
+
+Create `.env` file in project root:
+
+```bash
+# Environment
+ENVIRONMENT=dev
+
+# Ports
+ENTITY_PORT=8080
+AWARD_PORT=8081
+BACKEND_PORT=8000
+FRONTEND_PORT=3000
+
+# Database
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=mra_db
+POSTGRES_USER=mra_user
+POSTGRES_PASSWORD=your_password
+POSTGRES_SSL_ENABLED=false
+POSTGRES_CERT=us-east-1-bundle.pem
+
+# Vector Database
+VECTOR_DB_TYPE=qdrant
+QDRANT_HOST=localhost
+QDRANT_PORT=6333
+QDRANT_PROTOCOL=http
+QDRANT_API_KEY=
+
+# LLM Configuration
+LLM_PROVIDER=ollama
+LLM_MODEL=gemma3:27b
+OPENAI_API_KEY=
+GEMINI_API_KEY=
+
+# SAM.gov API Keys (10 keys for rotation)
+SAM_API_KEY_1=your_key_1
+SAM_API_KEY_2=your_key_2
+# ... up to SAM_API_KEY_10
+
+# USAspending.gov (usually no key required)
+USASPENDING_API_BASE_URL=https://api.usaspending.gov
+
+# Stripe (for subscriptions)
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# Frontend
+NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_MODE=development
+```
+
+#### 3. Start Services with Docker Compose
+
+```bash
+# Build and start all services
+docker-compose up --build
+
+# Or start individual services
+docker-compose up entitydata
+docker-compose up awardload
+docker-compose up backend
+docker-compose up frontend
+```
+
+#### 4. Manual Service Startup (Development)
+
+**EntityData Service**:
+```bash
+cd mra_entityData
+./mvnw clean package
+./mvnw spring-boot:run
+# Service runs on http://localhost:8080
+# Swagger UI: http://localhost:8080/swagger-ui.html
+```
+
+**AwardLoad Service**:
+```bash
+cd mra_awardload
+./mvnw clean package
+./mvnw spring-boot:run
+# Service runs on http://localhost:8081
+# Swagger UI: http://localhost:8081/swagger-ui.html
+```
+
+**MRA Backend**:
+```bash
+cd MRA_BACKEND
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python main.py
+# Service runs on http://localhost:8000
+# API docs: http://localhost:8000/docs
+```
+
+**MRA Frontend**:
+```bash
+cd MRA_FRONTEND
+bun install  # or npm install
+bun run dev  # or npm run dev
+# Service runs on http://localhost:3000
+```
+
+### Production Deployment
+
+#### Build Docker Images
+
+```bash
+# Build all images
+./scripts/build.sh
+
+# Or build individually
+docker build -f Dockerfile.EntityData -t mra-entitydata:latest .
+docker build -f Dockerfile.AwardLoad -t mra-awardload:latest .
+docker build -f Dockerfile.Backend -t mra-backend:latest .
+docker build -f Dockerfile.Frontend -t mra-frontend:latest .
+```
+
+#### Deploy Services
+
+```bash
+# Deploy to production environment
+ENVIRONMENT=production ./scripts/deploy.sh
+
+# Start services
+./scripts/start.sh
+
+# Check status
+./scripts/status.sh
+
+# Stop services
+./scripts/stop.sh
+```
+
+---
+
+## 📖 API Documentation
+
+### EntityData Service API
+
+**Base URL**: `http://localhost:8080`
+
+**Authentication**: Swagger UI protected (Basic Auth)
+
+**Key Endpoints**:
+
+```
+GET  /entities                      # Search entities
+POST /entities/staging              # Add entities to staging
+GET  /entities/{uei}                # Get entity by UEI
+POST /entities/extract-async        # Async entity extraction
+GET  /entities/jobs/{jobId}         # Check extraction job status
+POST /entities/historical-download  # Start historical download
+GET  /entities/system-info          # System information
+POST /admin/cleanup                 # Cleanup staging data
+```
+
+**Example: Search Entities**
+
+```bash
+curl -X GET "http://localhost:8080/entities?search=cybersecurity&page=0&size=20" \
+  -H "Accept: application/json"
+```
+
+**Response**:
+```json
+{
+  "content": [
+    {
+      "uei": "ABC123DEF456",
+      "legalBusinessName": "Acme Cybersecurity Solutions",
+      "cageCode": "1A2B3",
+      "dunsNumber": "123456789",
+      "businessTypes": ["2R", "A8"],
+      "naicsCodes": ["541512", "541519"],
+      "pscCodes": ["D302", "D307"],
+      "registrationDate": "2023-01-15",
+      "expirationDate": "2024-01-14",
+      "status": "Active"
+    }
+  ],
+  "page": 0,
+  "size": 20,
+  "totalElements": 150,
+  "totalPages": 8
+}
+```
+
+### AwardLoad Service API
+
+**Base URL**: `http://localhost:8081`
+
+**Key Endpoints**:
+
+```
+GET  /awards                        # Search awards
+GET  /awards/{awardId}              # Get award by ID
+POST /awards/load                   # Load awards from USAspending
+GET  /actuator/health               # Health check
+```
+
+### MRA Backend API
+
+**Base URL**: `http://localhost:8000`
+
+**Authentication**: JWT Bearer Token
+
+**Key Endpoints**:
+
+```
+# Authentication
+POST /auth/register                 # Register new user
+POST /auth/login                    # Login (returns JWT)
+POST /auth/refresh                  # Refresh JWT token
+POST /auth/forgot-password          # Request password reset
+POST /auth/reset-password           # Reset password
+
+# Chat
+POST /chats/start                   # Start new chat thread
+POST /chats/ask                     # Ask question (SSE streaming)
+GET  /chats/threads                 # List chat threads
+GET  /chats/threads/{threadId}      # Get thread with messages
+DELETE /chats/threads/{threadId}    # Delete thread
+
+# Projects
+GET  /projects                      # List projects
+POST /projects                      # Create project
+GET  /projects/{projectId}          # Get project details
+PUT  /projects/{projectId}          # Update project
+DELETE /projects/{projectId}        # Delete project
+
+# Research
+GET  /research/prompts              # List research prompts
+POST /research/prompts              # Create research prompt
+POST /research/execute              # Execute research prompt
+
+# Analytics
+GET  /analytics/agency              # Agency spending analytics
+GET  /analytics/naics               # NAICS spending analytics
+GET  /analytics/trends              # Spending trends
+GET  /analytics_drilldown/top-recipients  # Top recipients
+
+# Favourites
+GET  /favourites/entities           # Favorite entities
+POST /favourites/entities/{entityId} # Add entity to favorites
+DELETE /favourites/entities/{entityId} # Remove from favorites
+
+# Teams
+GET  /teams                         # List user teams
+POST /teams                         # Create team
+POST /teams/{teamId}/invite         # Invite team member
+```
+
+**Example: Chat with Streaming Response**
+
+```bash
+curl -X POST "http://localhost:8000/chats/ask" \
+  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "What are recent AI/ML contracts with DoD?",
+    "thread_id": "thread-uuid",
+    "tenant_id": "tenant-1"
+  }'
+```
+
+**SSE Response** (streamed):
+```
+data: {"type": "token", "content": "Based"}
+data: {"type": "token", "content": " on"}
+data: {"type": "token", "content": " recent"}
+data: {"type": "token", "content": " data"}
+...
+data: {"type": "done"}
+```
+
+### Frontend API Integration
+
+**Authentication Flow**:
+
+```typescript
+// Login
+const response = await axios.post('/auth/login', {
+  email: 'user@example.com',
+  password: 'password123'
+});
+const { access_token, refresh_token } = response.data;
+
+// Store tokens
+Cookies.set('access_token', access_token);
+Cookies.set('refresh_token', refresh_token);
+
+// Use axios interceptor for auth
+axios.interceptors.request.use((config) => {
+  const token = Cookies.get('access_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// Refresh token on 401
+axios.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    if (error.response?.status === 401) {
+      const refreshToken = Cookies.get('refresh_token');
+      const { data } = await axios.post('/auth/refresh', {
+        refresh_token: refreshToken
+      });
+      Cookies.set('access_token', data.access_token);
+      // Retry original request
+      return axios(error.config);
+    }
+    return Promise.reject(error);
+  }
+);
+```
+
+---
+
+## 🎓 Technical Achievements
+
+### 1. **Microservices Architecture**
+- **3 Specialized Services**: Entity, Award, Backend (chat/analytics)
+- **Service Isolation**: Each service has dedicated database schemas
+- **Independent Scaling**: Scale services based on load
+- **Technology Diversity**: Java, Python, TypeScript in single platform
+
+### 2. **High-Performance Data Ingestion**
+- **10 SAM API Keys**: Parallel entity fetching (100 req/sec)
+- **Batch Processing**: 10,000 entities per batch
+- **Staging Pipeline**: Validate before production insertion
+- **Incremental Updates**: Only fetch changed entities
+- **Historical Downloads**: Automated monthly historical data ingestion
+
+### 3. **AI-Powered Intelligence**
+- **Multi-LLM Support**: Ollama (local), OpenAI, Gemini
+- **RAG Pipeline**: Vector search + LLM generation
+- **Intent Classification**: Route queries to optimal handlers
+- **Streaming Responses**: Real-time SSE chat
+- **Memory Management**: Conversation summarization
+- **Web Search**: Gemini-powered web search for recent info
+
+### 4. **Vector Search & Embeddings**
+- **E5-Large-v2**: State-of-the-art embedding model (768D)
+- **Qdrant Integration**: High-performance vector database
+- **Semantic Search**: Find similar entities/awards by meaning
+- **Hybrid Search**: Combine keyword + semantic
+- **Cosine Similarity**: Efficient similarity calculations
+- **HNSW Indexing**: Fast approximate nearest neighbor search
+
+### 5. **Advanced Analytics**
+- **Automated Drilldown**: Daily and weekly analytics jobs
+- **Pre-computed Aggregations**: Fast dashboard loading
+- **Multi-Dimensional**: Agency, NAICS, PSC, Entity, Time, Geography
+- **Top-K Analysis**: Top 10 recipients per category
+- **Trend Detection**: Year-over-year comparisons
+- **Exportable**: Excel export for offline analysis
+
+### 6. **Scalability & Performance**
+- **Async/Await**: Fully asynchronous Python backend
+- **Connection Pooling**: Database connection reuse
+- **Worker Pool**: 4 Uvicorn workers in production
+- **Compression**: Gzip for responses >1KB
+- **Caching**: TanStack Query caching in frontend
+- **Lazy Loading**: Infinite scroll for large datasets
+
+### 7. **Enterprise Features**
+- **Multi-Tenancy**: Data isolation per tenant
+- **RBAC**: Role-based access control
+- **Team Collaboration**: Shared projects and research
+- **Audit Trails**: Track all entity/award changes
+- **Subscription Management**: Stripe integration
+- **Usage Limits**: Tier-based feature access
+
+---
+
+## 📊 Performance & Scale
+
+### Data Volume
+
+- **Entities**: 2M+ SAM.gov registered entities
+- **Awards**: 100K+ new awards annually (cumulative 5M+)
+- **Analytics**: 10K+ pre-computed aggregations
+- **Chat Messages**: 1M+ AI chat interactions
+- **Vector Embeddings**: 2M+ entity vectors, 5M+ award vectors
+
+### Processing Speed
+
+- **Entity Ingestion**: 10,000 entities/min (10 API keys)
+- **Award Ingestion**: 5,000 awards/min
+- **Embedding Generation**: 100 embeddings/sec (batch)
+- **Vector Search**: &lt;50ms for top-10 similarity search
+- **Chat Response**: 1-2s first token, 50-100 tokens/sec streaming
+- **Analytics Drilldown**: Complete daily job in 10-15 minutes
+
+### API Performance
+
+- **Entity Search**: &lt;100ms (indexed queries)
+- **Award Search**: &lt;150ms (Elasticsearch)
+- **Semantic Search**: &lt;200ms (vector + rerank)
+- **Chat Endpoint**: &lt;2s (SSE start)
+- **Analytics Dashboard**: &lt;500ms (pre-computed data)
+
+### Resource Usage
+
+**EntityData Service**:
+- Memory: 2GB (JVM heap)
+- CPU: 2 cores
+- Database: 50GB (entities + relationships)
+
+**AwardLoad Service**:
+- Memory: 2GB (JVM heap)
+- CPU: 2 cores
+- Database: 100GB (awards + staging)
+
+**MRA Backend**:
+- Memory: 1GB (per worker)
+- CPU: 4 cores (4 workers)
+- Database: 20GB (users, projects, analytics)
+
+**MRA Frontend**:
+- Memory: 512MB (Node process)
+- CPU: 1 core
+- Disk: 500MB (build artifacts)
+
+**Databases**:
+- PostgreSQL: 200GB total
+- Elasticsearch: 50GB (indexed data)
+- Qdrant: 100GB (vector storage)
+
+---
+
+## 🎯 Use Cases
+
+### 1. **Competitive Intelligence**
+
+**Scenario**: Track competitors' contract wins
+
+**Workflow**:
+1. Search for competitor entities by name
+2. Add to favorites
+3. View award history for each competitor
+4. Analyze spending trends by agency
+5. Identify agencies they frequently win from
+6. Export data for presentation
+
+**Result**: Understand competitive landscape and target similar opportunities
+
+### 2. **Market Research**
+
+**Scenario**: Identify agencies spending in your NAICS code
+
+**Workflow**:
+1. Navigate to Analytics dashboard
+2. Filter by NAICS code (e.g., 541512 - Computer Systems Design)
+3. View top agencies by spending
+4. Drill down into agency details
+5. View recent awards in that NAICS
+6. Chat with AI: "What are the trends in DoD IT spending?"
+
+**Result**: Data-driven agency targeting strategy
+
+### 3. **Opportunity Tracking**
+
+**Scenario**: Monitor expiring solicitations
+
+**Workflow**:
+1. Set up expiring opportunities alerts
+2. Define threshold (e.g., 7 days before deadline)
+3. Receive email notifications
+4. Review opportunities on dashboard
+5. Add relevant opportunities to projects
+6. Collaborate with team on responses
+
+**Result**: Never miss critical deadlines
+
+### 4. **Entity Research**
+
+**Scenario**: Deep-dive research on potential teaming partner
+
+**Workflow**:
+1. Search entity by name/UEI
+2. View entity profile (NAICS, PSC, certifications)
+3. View award history
+4. Create research prompt: "Analyze this entity's past performance"
+5. AI generates comprehensive research report
+6. Share research with team
+7. Export to PDF for meeting
+
+**Result**: Informed teaming decisions
+
+### 5. **Award Analysis**
+
+**Scenario**: Understand past awards for upcoming RFP
+
+**Workflow**:
+1. Search for similar past awards by title/description
+2. View award details (amount, dates, awardee)
+3. Identify incumbent contractor
+4. View incumbent's other awards
+5. Chat: "What is the typical contract value for this type of award?"
+6. Export similar awards to Excel
+
+**Result**: Better pricing and strategy for proposal
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Issue 1: EntityData service fails to start**
+```
+Error: Unable to connect to PostgreSQL
+
+Solution:
+1. Check PostgreSQL is running: docker ps | grep postgres
+2. Verify connection settings in properties/${ENVIRONMENT}.application.properties
+3. Test connection: psql -h localhost -U mra_user -d mra_db
+4. Check firewall/network: telnet localhost 5432
+```
+
+**Issue 2: Chat responses are slow**
+```
+Solution:
+1. Check LLM provider status (Ollama/OpenAI/Gemini)
+2. For Ollama, ensure model is downloaded: ollama pull gemma3:27b
+3. Check Qdrant is running: curl http://localhost:6333/health
+4. Monitor backend logs: tail -f logs/mra-backend.log
+5. Increase timeout in frontend API calls
+```
+
+**Issue 3: Vector search not working**
+```
+Error: Qdrant collection not found
+
+Solution:
+1. Check Qdrant service: curl http://localhost:6333/collections
+2. Create collections manually:
+   curl -X PUT "http://localhost:6333/collections/entities" \
+     -H "Content-Type: application/json" \
+     -d '{"vectors": {"size": 768, "distance": "Cosine"}}'
+3. Re-run embedding generation: POST /entities/generate-embeddings
+4. Verify embeddings exist: GET /entities/embeddings/count
+```
+
+**Issue 4: Frontend can't connect to backend**
+```
+Error: CORS policy: No 'Access-Control-Allow-Origin' header
+
+Solution:
+1. Check NEXT_PUBLIC_API_URL in .env matches backend URL
+2. Verify backend CORS settings in main.py (allow_origins)
+3. For development, use: allow_origins=["*"]
+4. For production, specify exact frontend origin
+5. Restart backend after changes
+```
+
+**Issue 5: SAM API rate limiting**
+```
+Error: 429 Too Many Requests from SAM.gov
+
+Solution:
+1. Check API key rotation is working: GET /entities/system-info
+2. Verify all 10 API keys are valid
+3. Reduce concurrent requests per key (currently 10/sec)
+4. Increase delay between requests in EnhancedSamApiClient
+5. Monitor rate limits in logs
+```
+
+---
+
+## 📝 License
+
+This project is proprietary software owned by Kontratar LLC.
+
+```
+GovBD-MRA - Market Research Analytics Platform
+Copyright (C) 2024 Kontratar LLC
+
+All rights reserved. Unauthorized copying, modification, distribution,
+or use of this software, via any medium, is strictly prohibited.
+```
+
+---
+
+## 🤝 Contributing
+
+GovBD-MRA is a proprietary platform. Contributions are limited to authorized Kontratar team members.
+
+**For team members**:
+
+1. Create feature branch: `git checkout -b feature/amazing-feature`
+2. Make changes and test thoroughly
+3. Run tests: `pytest` (backend), `bun test` (frontend)
+4. Update documentation if needed
+5. Commit: `git commit -m 'Add amazing feature'`
+6. Push: `git push origin feature/amazing-feature`
+7. Create Pull Request with detailed description
+8. Request code review from team lead
+9. Address review comments
+10. Merge after approval
+
+---
+
+## 🛣️ Roadmap
+
+### Q2 2026
+- 🔍 **Advanced Search**: Boolean operators, proximity search
+- 📊 **Enhanced Analytics**: Predictive spending models
+- 🤖 **AI Agents**: Autonomous opportunity monitoring agents
+- 📱 **Mobile App**: React Native iOS/Android apps
+
+### Q3 2026
+- 🌐 **FPDS Full Integration**: Complete contract data from FPDS
+- 📈 **Real-time Dashboards**: WebSocket-based live analytics
+- 🔗 **API Marketplace**: Public API for third-party integrations
+- 🎓 **Knowledge Base**: AI-powered procurement knowledge base
+
+### Q4 2026
+- 🧠 **Advanced AI**: GPT-4-turbo fine-tuned on procurement data
+- 🌍 **International Expansion**: Support for non-US contracts
+- 🔐 **SOC 2 Compliance**: Enterprise security certification
+- 📊 **Custom Reports**: Drag-and-drop report builder
+
+---
+
+## 📞 Support
+
+### For Issues
+
+- 🐛 **Bug Reports**: Contact engineering team
+- 💬 **Questions**: Internal Slack #mra-support
+- 📧 **Email**: mra-support@kontratar.com
+- 📚 **Documentation**: Internal wiki
+
+### Service Status
+
+- 🟢 **Production**: https://mra.govbd.com/status
+- 🟡 **QA**: http://qa.mra.govbd.com/status
+- 🔵 **Dev**: http://dev.mra.govbd.com/status
+
+---
+
+## 🏆 Project Stats
+
+### Codebase Metrics
+
+- **Total Lines**: 150,000+ lines
+  - Java: 50,000 lines (EntityData + AwardLoad)
+  - Python: 40,000 lines (MRA Backend)
+  - TypeScript/TSX: 60,000 lines (MRA Frontend)
+- **Files**: 850+ files
+  - Java: 150 files
+  - Python: 166 files
+  - TypeScript: 450+ files
+- **Services**: 3 backend services + 1 frontend
+- **API Endpoints**: 80+ REST endpoints
+- **Database Tables**: 100+ tables
+- **Vector Collections**: 3 collections (entities, awards, documents)
+
+### Technology Diversity
+
+- **Languages**: Java, Python, TypeScript/JavaScript
+- **Frameworks**: Spring Boot, FastAPI, Next.js
+- **Databases**: PostgreSQL, Elasticsearch, Qdrant, ChromaDB
+- **LLM Providers**: Ollama, OpenAI, Gemini
+- **Cloud Services**: AWS RDS, S3 (planned)
+
+---
+
+## 💖 Acknowledgments
+
+GovBD-MRA is built on the shoulders of giants:
+
+- **Spring Team**: Excellent enterprise Java framework
+- **FastAPI Team**: High-performance Python web framework
+- **Next.js Team**: Revolutionary React framework
+- **LangChain Team**: LLM orchestration framework
+- **Qdrant Team**: High-performance vector database
+- **Elastic Team**: Powerful search engine
+- **OpenAI**: GPT models powering AI chat
+- **Google**: Gemini API for web search
+- **Ollama**: Local LLM runtime
+- **SAM.gov**: Entity data API
+- **USAspending.gov**: Award data API
+
+---
+
+## 🌟 Why Choose GovBD-MRA?
+
+### Comparison with Alternatives
+
+| Feature | GovBD-MRA | GovWin | Deltek | BGov | SAM.gov |
+|---------|-----------|--------|--------|------|---------|
+| **Entity Data** | ✅ 2M+ | ✅ 2M+ | ✅ 2M+ | ⚠️ Limited | ✅ Native |
+| **Award Data** | ✅ 5M+ | ✅ 5M+ | ✅ 5M+ | ✅ 5M+ | ⚠️ Partial |
+| **AI Chat** | ✅ RAG-powered | ❌ No | ⚠️ Basic | ❌ No | ❌ No |
+| **Vector Search** | ✅ Semantic | ❌ No | ❌ No | ❌ No | ❌ No |
+| **Analytics** | ✅ Pre-computed | ⚠️ Basic | ✅ Advanced | ✅ Advanced | ⚠️ Basic |
+| **Team Collaboration** | ✅ Full | ✅ Full | ✅ Full | ⚠️ Limited | ❌ No |
+| **API Access** | ✅ REST API | ⚠️ Paid | ⚠️ Paid | ❌ No | ✅ Free (limited) |
+| **Pricing** | $$ | $$$ | $$$$ | $$$ | Free (limited) |
+| **Self-Hosted** | ✅ Yes | ❌ No | ❌ No | ❌ No | N/A |
+
+---
+
+**Ready to revolutionize your government contracting intelligence? Get started with GovBD-MRA today!** 🚀🏛️
+
+**Built with 💙 by the Kontratar Engineering Team**
+
+_"Empowering government contractors with data-driven intelligence."_ ⚡
